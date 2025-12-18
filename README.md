@@ -3,9 +3,7 @@
 Course: CMPE343 – Database Management Systems and Programming I
 
 ## Project Description
-This project implements a Library Database Management System using PostgreSQL.
-It includes ER design, DDL, DML, and SQL queries to manage books, authors,
-members, staff, borrow transactions, and fines.
+For our Database Management Systems course, we built a Library Management System using PostgreSQL. It keeps track of all the books, members, authors... We designed it starting with a visual ER diagram, creating all the database tables, filling them with data, and writing queries that manipulate the tables.
 
 ## Technologies Used
 - PostgreSQL
