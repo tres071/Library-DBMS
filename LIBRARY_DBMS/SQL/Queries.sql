@@ -57,6 +57,48 @@ GROUP BY m.full_name;
 ------------------------------------------------------------------------------------------------------------------------
 ------SULTAN'S 5 COMPLEX QUERIES
 --TYPE HERE
+-- QUERY 6: Show books with the number of times each book was borrowed
+SELECT 
+    b.title AS book_title,
+    COUNT(br.borrow_id) AS borrow_count
+FROM Book b
+LEFT JOIN Borrow br ON b.book_id = br.book_id
+GROUP BY b.title;
+
+-- QUERY 7: Show members and the titles of books they borrowed along with borrow dates
+SELECT 
+    m.full_name AS member_name,
+    b.title AS book_title,
+    br.borrow_date
+FROM Borrow br
+JOIN Member m ON br.member_id = m.member_id
+JOIN Book b ON br.book_id = b.book_id;
+
+-- QUERY 8: Show staff members and the total number of borrows they handled
+SELECT 
+    s.full_name AS staff_name,
+    COUNT(br.borrow_id) AS total_borrows
+FROM Staff s
+LEFT JOIN Borrow br ON s.staff_id = br.staff_id
+GROUP BY s.full_name;
+
+-- QUERY 9: Show books that were returned late
+SELECT 
+    b.title AS book_title,
+    br.return_date,
+    br.due_date
+FROM Borrow br
+JOIN Book b ON br.book_id = b.book_id
+WHERE br.return_date > br.due_date;
+
+-- QUERY 10: Show members and the total number of fines they received
+SELECT 
+    m.full_name AS member_name,
+    COUNT(f.fine_id) AS total_fines
+FROM Member m
+JOIN Borrow br ON m.member_id = br.member_id
+JOIN Fine f ON br.borrow_id = f.borrow_id
+GROUP BY m.full_name;
 
 ----------------------------------------------------------------------------------------------------------------------------
 ------ZACH'S 5 COMPLEX QUERIES
@@ -112,3 +154,4 @@ ORDER BY borrow_count DESC
 LIMIT 1;
 
 ----------------------------------------------------------------------------------------------------------------------------
+
