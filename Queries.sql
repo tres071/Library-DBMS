@@ -60,7 +60,7 @@ GROUP BY m.full_name;
 
 ----------------------------------------------------------------------------------------------------------------------------
 ------ZACH'S 5 COMPLEX QUERIES
--- QUERY 1: Show members who have borrowed more than 2 books
+-- QUERY 11: Show members who have borrowed more than 2 books
 SELECT 
     m.full_name,
     COUNT(br.borrow_id) AS total_borrows
@@ -69,7 +69,7 @@ JOIN Borrow br ON m.member_id = br.member_id
 GROUP BY m.full_name
 HAVING COUNT(br.borrow_id) > 2;
 
--- QUERY 2: List books along with their authors and genres
+-- QUERY 12: List books along with their authors and genres
 SELECT 
     b.title,
     CONCAT(a.first_name, ' ', a.last_name) AS author_name,
@@ -79,7 +79,7 @@ JOIN Book_Author ba ON b.book_id = ba.book_id
 JOIN Author a ON ba.author_id = a.author_id
 JOIN Genre g ON b.genre_id = g.genre_id;
 
--- QUERY 3: Show staff members who handled at least one borrow transaction
+-- QUERY 13: Show staff members who handled at least one borrow transaction
 SELECT 
     s.full_name AS staff_name,
     COUNT(br.borrow_id) AS transactions_handled
@@ -88,7 +88,7 @@ JOIN Borrow br ON s.staff_id = br.staff_id
 GROUP BY s.full_name
 HAVING COUNT(br.borrow_id) > 0;
 
--- QUERY 4: Find members with unpaid fines and the related book titles
+-- QUERY 14: Find members with unpaid fines and the related book titles
 SELECT 
     m.full_name,
     b.title,
@@ -100,7 +100,7 @@ JOIN Member m ON br.member_id = m.member_id
 JOIN Book b ON br.book_id = b.book_id
 WHERE f.paid_status = 'UNPAID';
 
--- QUERY 5: Show the most popular genre based on number of borrows
+-- QUERY 15: Show the most popular genre based on number of borrows
 SELECT 
     g.genre_name,
     COUNT(br.borrow_id) AS borrow_count
