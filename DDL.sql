@@ -62,4 +62,10 @@ amount DECIMAL(6,2), -------------------Fine amount
 paid_status VARCHAR(10) DEFAULT 'UNPAID',
 FOREIGN KEY (borrow_id) REFERENCES Borrow(borrow_id)
 );
-------------------------
+----------------------------------------
+-- TABLE 8: GENRE : Stores book genres
+CREATE TABLE Genre (
+    genre_id INT PRIMARY KEY,          -- Unique genre ID
+    genre_name VARCHAR(50) NOT NULL    -- Genre name
+);
+
