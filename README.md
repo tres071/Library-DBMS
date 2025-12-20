@@ -18,5 +18,5 @@ For our Database Management Systems course, we built a Library Management System
 ## Authors
 - TRESOR KALOMBO KALALA 22512651
 - Dzaan Zachariah Allam 22120765
-- Sultan 22305640
+- Sultan Makhmut 22305640
 
