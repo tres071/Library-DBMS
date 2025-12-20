@@ -7,6 +7,12 @@ WHERE book_id = 5;
 UPDATE Book_Author
 SET author_id = 2
 WHERE book_id = 7;
+-- Show books with their genres
+SELECT 
+    b.title,
+    g.genre_name
+FROM Book b
+JOIN Genre g ON b.genre_id = g.genre_id;
 -- QUERY 1: Show books with their authors
 SELECT 
     b.title AS book_title,
