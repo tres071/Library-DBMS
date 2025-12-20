@@ -94,3 +94,13 @@ SELECT title, copies_available
 FROM Book
 WHERE copies_available > 0
 ORDER BY copies_available DESC;
+------SULTAN'S 5 COMPLEX QUERIES
+--TYPE HERE
+
+------------------------------
+
+------ZACH'S 5 COMPLEX QUERIES
+--TYPE HERE
+
+------------------------------
+
