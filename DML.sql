@@ -26,6 +26,31 @@ INSERT INTO Book_Author VALUES (6, 3); -- Nietzsche
 INSERT INTO Book_Author VALUES (4, 4); -- Austen
 INSERT INTO Book_Author VALUES (5, 5); -- Camus
 
+---Genre
+-- Add genre reference to Book table
+ALTER TABLE Book
+ADD COLUMN genre_id INT;
+-- Add foreign key constraint
+ALTER TABLE Book
+ADD CONSTRAINT fk_book_genre
+FOREIGN KEY (genre_id) REFERENCES Genre(genre_id);
+-- Insert genres
+INSERT INTO Genre VALUES (1, 'Philosophy');
+INSERT INTO Genre VALUES (2, 'Classic Literature');
+INSERT INTO Genre VALUES (3, 'Fiction');
+INSERT INTO Genre VALUES (4, 'Romance');
+INSERT INTO Genre VALUES (5, 'Psychological');
+-- Assign genres to books
+UPDATE Book SET genre_id = 3 WHERE book_id = 1; -- The Truth (Fiction)
+UPDATE Book SET genre_id = 2 WHERE book_id = 2; -- The Brothers Karamazov (Classic)
+UPDATE Book SET genre_id = 3 WHERE book_id = 3; -- Next Year (Fiction)
+UPDATE Book SET genre_id = 4 WHERE book_id = 4; -- Pride and Prejudice (Romance)
+UPDATE Book SET genre_id = 5 WHERE book_id = 5; -- The Stranger (Psychological)
+UPDATE Book SET genre_id = 1 WHERE book_id = 6; -- Thus Spoke Zarathustra (Philosophy)
+UPDATE Book SET genre_id = 2 WHERE book_id = 7; -- Notes from Underground (Classic)
+
+
+
 -- Members
 INSERT INTO Member VALUES (1, 'Zachariah', '22120765@student.ciu.edu.tr', '+2347061614885', '2025-10-07');
 INSERT INTO Member VALUES (2, 'Sultan', '22305640@student.ciu.edu.tr', '+77052175021', '2025-09-07');
