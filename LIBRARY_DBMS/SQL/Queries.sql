@@ -1,12 +1,4 @@
 ------TRESOR'S 5 COMPLEX QUERIES
--- Update author of "The Stranger" to Albert Camus
-UPDATE Book_Author
-SET author_id = 5
-WHERE book_id = 5;
--- Update author of "Notes from Underground" to Fyodor Dostoevsky
-UPDATE Book_Author
-SET author_id = 2
-WHERE book_id = 7;
 -- Show books with their genres
 SELECT 
     b.title,
@@ -154,4 +146,5 @@ ORDER BY borrow_count DESC
 LIMIT 1;
 
 ----------------------------------------------------------------------------------------------------------------------------
+
 
