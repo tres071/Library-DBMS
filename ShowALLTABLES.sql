@@ -1,0 +1,7 @@
+SELECT * FROM Author;
+SELECT * FROM Book;
+SELECT * FROM Member;
+SELECT * FROM Staff;
+SELECT * FROM Book_Author;
+SELECT * FROM Borrow;
+SELECT * FROM Fine;
