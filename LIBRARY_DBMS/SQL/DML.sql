@@ -13,6 +13,14 @@ INSERT INTO Book VALUES (4, 'Pride and Prejudice', '000077770003', 1813, 6);
 INSERT INTO Book VALUES (5, 'The Stranger', '000077770004', 1942, 0); -- no copies available
 INSERT INTO Book VALUES (6, 'Thus Spoke Zarathustra', '000077770005', 1883, 1);
 INSERT INTO Book VALUES (7, 'Notes from Underground', '000077770006', 1864, 0); -- no copies available
+-- Update author of "The Stranger" to Albert Camus
+UPDATE Book_Author
+SET author_id = 5
+WHERE book_id = 5;
+-- Update author of "Notes from Underground" to Fyodor Dostoevsky
+UPDATE Book_Author
+SET author_id = 2
+WHERE book_id = 7;
 
 -- Connect books with authors
 -- Author 1 wrote two books
